@@ -71,25 +71,27 @@ desktop/app action
 
 ## Command Set
 
-| Command               | Status      | Action                       |
-| --------------------- | ----------- | ---------------------------- |
-| `up`                  | Implemented | Move/page up                 |
-| `down`                | Implemented | Move/page down               |
-| `left`                | Implemented | Move cursor left             |
-| `right`               | Implemented | Move cursor right            |
-| `select`              | Implemented | Click/select                 |
-| `social` / `whatsapp` | Implemented | Start WhatsApp workflow      |
-| `stream` / `youtube`  | Implemented | Open YouTube                 |
-| `music` / `spotify`   | Implemented | Open/play Spotify            |
-| `focus <app>`         | Implemented | Focus a window/app           |
-| `help` / `commands`   | Implemented | Show command list            |
-| `exit` / `quit` / `q` | Implemented | Stop controller              |
-| `update`              | Planned     | System/update workflow       |
-| `scroll`              | Planned     | Toggle scroll mode           |
-| `silence`             | Planned     | Ignore idle signal           |
-| `reject`              | Planned     | Ignore noise/artifact signal |
+These are the 10 main commands planned for SubVox:
 
----
+| Command | Action |
+|---|---|
+| `left` | Navigate/move left |
+| `right` | Navigate/move right |
+| `up` | Navigate/move up |
+| `down` | Navigate/move down |
+| `select` | Confirm/click/select |
+| `scroll` | Toggle scroll mode |
+| `music` | Open/play Spotify |
+| `stream` | Open YouTube/streaming workflow |
+| `social` | Start WhatsApp/social workflow |
+| `update` | Trigger system/update workflow |
+
+Additional safety classes planned later:
+
+| Class | Action |
+|---|---|
+| `silence` | Ignore idle/no-command state |
+| `reject` | Ignore invalid/noisy signal |
 
 ## WhatsApp Workflow
 
@@ -180,22 +182,6 @@ Windows:
 ```bash
 ollama pull tinyllama
 ```
-
----
-
-## EMG Simulation Phase
-
-Before moving to hardware, we are simulating the EMG signal flow using **LTspice** and building the signal-processing pipeline in **Python**.
-
-We also plan to use public silent-speech EMG data only for the simulation phase.
-
-Dataset:
-[https://zenodo.org/records/4064409](https://zenodo.org/records/4064409)
-
-Reference repo:
-[https://github.com/dgaddy/silent_speech](https://github.com/dgaddy/silent_speech)
-
-The final model will require our own collected 10-command EMG data.
 
 ---
 
