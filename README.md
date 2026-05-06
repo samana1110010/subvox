@@ -1,4 +1,3 @@
-Copy this shorter version into GitHub’s `README.md`:
 
 ````markdown
 # SubVox
