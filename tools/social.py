@@ -469,10 +469,18 @@ def connect_to_whatsapp(cdp_url="http://localhost:9222"):
 
             print(f"Sending to {contact}: {reply}")
 
-            msg_box = page.wait_for_selector("div[data-tab='10']")
-            msg_box.fill(reply)
-            page.keyboard.press("Enter")
-            time.sleep(1)
+            print(f"\nContact: {contact}")
+            print(f"Generated reply: {reply}")
+
+            confirm = input("Send this reply? (y/n): ").strip().lower()
+
+            if confirm == "y":
+                msg_box = page.wait_for_selector("div[data-tab='10']")
+                msg_box.fill(reply)
+                page.keyboard.press("Enter")
+                print("Reply sent.")
+            else:
+                print("Skipped.")
 
 
 def social_windows():
